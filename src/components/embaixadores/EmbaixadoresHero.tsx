@@ -280,7 +280,7 @@ const EmbaixadoresHero = () => {
               <Button
                 onClick={scrollToForm}
                 size="lg"
-                className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] hover:from-[#F4E5B5] hover:via-[#D4AF37] hover:to-[#F4E5B5] text-slate-900 px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base rounded-full shadow-2xl hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 group overflow-hidden font-semibold"
+                className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] hover:from-[#F4E5B5] hover:via-[#D4AF37] hover:to-[#F4E5B5] text-slate-900 px-7 sm:px-10 py-6 sm:py-7 text-base sm:text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 group overflow-hidden font-semibold"
                 style={{
                   backgroundSize: '200% auto',
                 }}
@@ -297,9 +297,9 @@ const EmbaixadoresHero = () => {
                     ease: "linear",
                   }}
                 />
-                <span className="relative z-10 flex items-center text-sm sm:text-base">
+                <span className="relative z-10 flex items-center text-base sm:text-lg">
                   {t('hero.cta')}
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </Button>
             </motion.div>
