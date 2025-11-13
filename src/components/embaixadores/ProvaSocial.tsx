@@ -50,7 +50,7 @@ const ProvaSocial = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div className="text-3xl sm:text-4xl md:text-5xl font-vivant-black text-white mb-2 sm:mb-3">26</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-vivant-black text-white mb-2 sm:mb-3">26+</div>
               <div className="text-base sm:text-lg text-[#D4AF37] font-medium mb-1">{t('community.stats.experience')}</div>
               <p className="text-slate-400 text-xs sm:text-sm">{t('community.stats.experienceDesc')}</p>
             </motion.div>
