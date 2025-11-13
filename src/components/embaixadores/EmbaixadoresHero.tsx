@@ -305,37 +305,43 @@ const EmbaixadoresHero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Trust Indicators with Animation */}
+          {/* Impact Message with Animation */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-2 sm:gap-4 text-base sm:text-lg text-slate-300 px-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="mt-12 sm:mt-16 px-4"
           >
-            {['portugal', 'switzerland', 'france', 'luxembourg'].map((country, index) => (
-              <motion.div
-                key={country}
-                className="flex items-center gap-2.5 bg-white/5 backdrop-blur-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-white/10"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 + index * 0.1 }}
-                whileHover={{ scale: 1.1, backgroundColor: "rgba(212,175,55,0.1)" }}
-              >
-                <motion.div
-                  className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#D4AF37] rounded-full"
+            <motion.div
+              className="inline-block"
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <div className="bg-gradient-to-r from-[#D4AF37]/20 via-[#D4AF37]/30 to-[#D4AF37]/20 backdrop-blur-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-[#D4AF37]/50 shadow-lg shadow-[#D4AF37]/20 hover:border-[#D4AF37]/80 hover:shadow-[#D4AF37]/40 transition-all duration-300">
+                <motion.p
+                  className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F4E5B5] via-[#D4AF37] to-[#F4E5B5] bg-clip-text text-transparent"
                   animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [1, 0.5, 1],
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                   }}
                   transition={{
-                    duration: 2,
+                    duration: 6,
                     repeat: Infinity,
-                    delay: index * 0.2,
+                    ease: "linear",
                   }}
-                />
-                <span className="text-base sm:text-lg font-medium">{t(`hero.countries.${country}`)}</span>
-              </motion.div>
-            ))}
+                  style={{
+                    backgroundSize: '200% auto',
+                  }}
+                >
+                  {t('hero.impactMessage')}
+                </motion.p>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
