@@ -1,0 +1,291 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+
+const FormularioEmbaixador = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { toast } = useToast();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    whatsapp: "",
+    cidadePais: "",
+    comoConheceu: "",
+    motivacao: "",
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+
+      toast({
+        title: "Inscrição enviada com sucesso!",
+        description: "Em breve entraremos em contato com você.",
+      });
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+        setFormData({
+          nome: "",
+          email: "",
+          whatsapp: "",
+          cidadePais: "",
+          comoConheceu: "",
+          motivacao: "",
+        });
+      }, 3000);
+    }, 2000);
+  };
+
+  return (
+    <section
+      id="formulario-embaixadores"
+      ref={ref}
+      className="py-24 md:py-32 bg-gradient-to-br from-white via-slate-50 to-white relative overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-[#D4AF37]/10 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-br from-slate-200/50 to-transparent rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Information */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8 }}
+              className="lg:sticky lg:top-24"
+            >
+              <span className="text-[#D4AF37] font-medium tracking-wider text-sm uppercase mb-4 block">
+                Junte-se a Nós
+              </span>
+              <h2 className="text-4xl md:text-5xl font-vivant-black text-slate-900 mb-6">
+                Faça parte da nossa
+                <br />
+                <span className="text-[#D4AF37]">rede de Embaixadores</span>
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Preencha o formulário ao lado e dê o primeiro passo para fazer parte
+                desta jornada extraordinária. Nossa equipe analisará sua candidatura
+                e entrará em contato em breve.
+              </p>
+
+              {/* Features */}
+              <div className="space-y-4">
+                {[
+                  "Processo de seleção cuidadoso",
+                  "Treinamento e suporte completo",
+                  "Plataforma exclusiva para embaixadores",
+                  "Comunidade engajada e inspiradora",
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-6 h-6 bg-[#D4AF37]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-4 h-4 text-[#D4AF37]" />
+                    </div>
+                    <span className="text-slate-700">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Column - Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-slate-100">
+                {!isSuccess ? (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Nome Completo */}
+                    <div className="space-y-2">
+                      <Label htmlFor="nome" className="text-slate-700 font-medium">
+                        Nome Completo *
+                      </Label>
+                      <Input
+                        id="nome"
+                        type="text"
+                        required
+                        value={formData.nome}
+                        onChange={(e) => handleInputChange("nome", e.target.value)}
+                        placeholder="Seu nome completo"
+                        className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-slate-700 font-medium">
+                        E-mail *
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        placeholder="seu@email.com"
+                        className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                      />
+                    </div>
+
+                    {/* WhatsApp */}
+                    <div className="space-y-2">
+                      <Label htmlFor="whatsapp" className="text-slate-700 font-medium">
+                        WhatsApp *
+                      </Label>
+                      <Input
+                        id="whatsapp"
+                        type="tel"
+                        required
+                        value={formData.whatsapp}
+                        onChange={(e) => handleInputChange("whatsapp", e.target.value)}
+                        placeholder="+351 123 456 789"
+                        className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                      />
+                    </div>
+
+                    {/* Cidade/País */}
+                    <div className="space-y-2">
+                      <Label htmlFor="cidadePais" className="text-slate-700 font-medium">
+                        Cidade/País *
+                      </Label>
+                      <Input
+                        id="cidadePais"
+                        type="text"
+                        required
+                        value={formData.cidadePais}
+                        onChange={(e) => handleInputChange("cidadePais", e.target.value)}
+                        placeholder="Porto, Portugal"
+                        className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                      />
+                    </div>
+
+                    {/* Como nos conheceu */}
+                    <div className="space-y-2">
+                      <Label htmlFor="comoConheceu" className="text-slate-700 font-medium">
+                        Como nos conheceu? *
+                      </Label>
+                      <Select
+                        value={formData.comoConheceu}
+                        onValueChange={(value) => handleInputChange("comoConheceu", value)}
+                        required
+                      >
+                        <SelectTrigger className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]">
+                          <SelectValue placeholder="Selecione uma opção" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="instagram">Instagram</SelectItem>
+                          <SelectItem value="facebook">Facebook</SelectItem>
+                          <SelectItem value="google">Google</SelectItem>
+                          <SelectItem value="indicacao">Indicação</SelectItem>
+                          <SelectItem value="paciente">Já sou paciente</SelectItem>
+                          <SelectItem value="outro">Outro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Motivação */}
+                    <div className="space-y-2">
+                      <Label htmlFor="motivacao" className="text-slate-700 font-medium">
+                        Por que quer ser Embaixador(a)?
+                      </Label>
+                      <Textarea
+                        id="motivacao"
+                        value={formData.motivacao}
+                        onChange={(e) => handleInputChange("motivacao", e.target.value)}
+                        placeholder="Conte-nos um pouco sobre sua motivação..."
+                        className="min-h-[120px] rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37] resize-none"
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full h-14 bg-gradient-to-r from-[#D4AF37] to-[#B4941F] hover:from-[#B4941F] hover:to-[#947520] text-white rounded-xl text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                          Enviando...
+                        </>
+                      ) : (
+                        <>
+                          Quero ser Embaixador(a) Areluna
+                          <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
+                    </Button>
+
+                    <p className="text-xs text-slate-500 text-center">
+                      Ao enviar, você concorda com nossa política de privacidade e
+                      termos do programa de embaixadores.
+                    </p>
+                  </form>
+                ) : (
+                  <div className="py-12 text-center">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.5, type: "spring" }}
+                      className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6"
+                    >
+                      <Check className="w-10 h-10 text-white" />
+                    </motion.div>
+                    <h3 className="text-2xl font-vivant-medium text-slate-900 mb-3">
+                      Inscrição Enviada!
+                    </h3>
+                    <p className="text-slate-600">
+                      Obrigado pelo seu interesse. Em breve entraremos em contato.
+                    </p>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FormularioEmbaixador;

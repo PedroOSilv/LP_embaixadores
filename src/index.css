@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  /* Bw Vivant Font Faces */
+  @font-face {
+    font-family: "Bw Vivant";
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot");
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.svg#Bw Vivant")format("svg");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Bw Vivant Light";
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot");
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.svg#Bw Vivant Light")format("svg");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Bw Vivant Medium";
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot");
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.svg#Bw Vivant Medium")format("svg");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Bw Vivant Black";
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot");
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.svg#Bw Vivant Black")format("svg");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Bw Vivant Skinny";
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot");
+    src: url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/70029fc48da6f85c70d9e53169e05eb2.svg#Bw Vivant Skinny")format("svg");
+    font-display: swap;
+  }
+
+  :root {
+    /* Premium Areluna color palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Sophisticated gold from the logo and clinic */
+    --primary: 42 72% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft marble tones */
+    --secondary: 280 8% 92%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 280 5% 95%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Elegant accent with marble undertones */
+    --accent: 285 12% 88%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 8% 88%;
+    --input: 280 8% 88%;
+    --ring: 42 72% 52%;
+
+    --radius: 0.75rem;
+
+    /* Premium gradients inspired by the marble and gold */
+    --gradient-marble: linear-gradient(135deg, hsl(285 15% 95%), hsl(280 10% 90%), hsl(42 20% 90%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 72% 52%), hsl(38 76% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(285 25% 20% / 0.8), hsl(280 20% 25% / 0.7));
+    
+    /* Elegant shadows */
+    --shadow-premium: 0 10px 40px -10px hsl(285 25% 20% / 0.15);
+    --shadow-gold: 0 8px 32px -8px hsl(42 72% 52% / 0.3);
+    
+    /* Smooth transitions */
+    --transition-elegant: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
