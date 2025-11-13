@@ -46,19 +46,21 @@ const FormularioEmbaixador = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://n8n.automacoesareluna.pt/webhook/lp-embaixadores", {
+      // Use the Vercel API proxy endpoint
+      const response = await fetch("/api/webhook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        mode: "cors",
-        credentials: "omit",
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+
+      const responseData = await response.json();
+      console.log("Form submitted successfully:", responseData);
 
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -84,41 +86,11 @@ const FormularioEmbaixador = () => {
       setIsSubmitting(false);
       console.error("Error submitting form:", error);
       
-      // Try alternative endpoint if CORS fails
-      try {
-        await fetch("/api/webhook", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-        
-        setIsSuccess(true);
-        toast({
-          title: t('form.successTitle'),
-          description: t('form.successMessage'),
-        });
-
-        setTimeout(() => {
-          setIsSuccess(false);
-          setFormData({
-            nome: "",
-            email: "",
-            whatsapp: "",
-            cidadePais: "",
-            comoConheceu: "",
-            motivacao: "",
-          });
-        }, 3000);
-      } catch (fallbackError) {
-        console.error("Fallback error:", fallbackError);
-        toast({
-          title: "Erro",
-          description: "Ocorreu um erro ao enviar o formulário. Tente novamente.",
-          variant: "destructive",
-        });
-      }
+      toast({
+        title: "Erro",
+        description: "Ocorreu um erro ao enviar o formulário. Tente novamente ou contacte-nos.",
+        variant: "destructive",
+      });
     }
   };
 
