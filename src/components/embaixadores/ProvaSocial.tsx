@@ -37,6 +37,41 @@ const ProvaSocial = () => {
             </p>
           </motion.div>
 
+          {/* Stats Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <svg className="w-8 h-8 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="text-5xl md:text-6xl font-vivant-black text-white mb-4">6+</div>
+              <div className="text-xl text-[#D4AF37] font-medium mb-2">{t('community.stats.experience')}</div>
+              <p className="text-slate-400 text-sm">{t('community.stats.experienceDesc')}</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                <svg className="w-8 h-8 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <div className="text-5xl md:text-6xl font-vivant-black text-white mb-4">98%</div>
+              <div className="text-xl text-[#D4AF37] font-medium mb-2">{t('community.stats.satisfaction')}</div>
+              <p className="text-slate-400 text-sm">{t('community.stats.satisfactionDesc')}</p>
+            </motion.div>
+          </div>
+
           {/* Locations Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {locations.map((location, index) => (

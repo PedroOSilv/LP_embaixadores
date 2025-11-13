@@ -121,6 +121,12 @@
     "badge": "Our Community",
     "title": "A Growing Family",
     "subtitle": "We are a community of professionals, patients and influencers who believe in transformation through aesthetic with purpose.",
+    "stats": {
+      "experience": "Years of Experience",
+      "experienceDesc": "Excellence in integrated aesthetics",
+      "satisfaction": "Satisfaction",
+      "satisfactionDesc": "Patient recommendation rate"
+    },
     "instagram": "Follow us on Instagram",
     "footerText": "Present in Portugal, Switzerland, France and Luxembourg, Instituto Areluna is recognized for excellence in integrated aesthetics and results that transform lives."
   },

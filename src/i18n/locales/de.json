@@ -121,6 +121,12 @@
     "badge": "Unsere Gemeinschaft",
     "title": "Eine wachsende Familie",
     "subtitle": "Wir sind eine Gemeinschaft von Fachleuten, Patienten und Influencern, die an Transformation durch Ästhetik mit Zweck glauben.",
+    "stats": {
+      "experience": "Jahre Erfahrung",
+      "experienceDesc": "Exzellenz in integrierter Ästhetik",
+      "satisfaction": "Zufriedenheit",
+      "satisfactionDesc": "Empfehlungsrate der Patienten"
+    },
     "instagram": "Folgen Sie uns auf Instagram",
     "footerText": "Präsent in Portugal, der Schweiz, Frankreich und Luxemburg wird das Instituto Areluna für Exzellenz in integrierter Ästhetik und Ergebnisse anerkannt, die Leben transformieren."
   },

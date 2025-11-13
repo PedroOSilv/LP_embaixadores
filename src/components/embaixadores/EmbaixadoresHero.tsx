@@ -17,8 +17,19 @@ const EmbaixadoresHero = () => {
   const smoothMouseX = useSpring(mouseX, { damping: 50, stiffness: 400 });
   const smoothMouseY = useSpring(mouseY, { damping: 50, stiffness: 400 });
 
-  const parallaxX = useTransform(smoothMouseX, [0, window.innerWidth], [-20, 20]);
-  const parallaxY = useTransform(smoothMouseY, [0, window.innerHeight], [-20, 20]);
+  const [windowSize, setWindowSize] = useState({ width: 1920, height: 1080 });
+
+  useEffect(() => {
+    const updateWindowSize = () => {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+    updateWindowSize();
+    window.addEventListener('resize', updateWindowSize);
+    return () => window.removeEventListener('resize', updateWindowSize);
+  }, []);
+
+  const parallaxX = useTransform(smoothMouseX, [0, windowSize.width], [-20, 20]);
+  const parallaxY = useTransform(smoothMouseY, [0, windowSize.height], [-20, 20]);
 
   useEffect(() => {
     mouseX.set(mousePosition.x);
@@ -112,13 +123,13 @@ const EmbaixadoresHero = () => {
         />
       ))}
 
-      {/* Geometric Shapes with Parallax */}
+      {/* Geometric Shapes with Parallax - Hidden on mobile */}
       <motion.div
-        className="absolute top-20 left-10 w-64 h-64 border border-[#D4AF37]/20 rounded-full"
+        className="absolute top-20 left-10 w-32 h-32 md:w-64 md:h-64 border border-[#D4AF37]/20 rounded-full hidden sm:block"
         style={{
-          x: useTransform(smoothMouseX, [0, window.innerWidth], [-30, 30]),
-          y: useTransform(smoothMouseY, [0, window.innerHeight], [-30, 30]),
-          rotate: useTransform(smoothMouseX, [0, window.innerWidth], [-10, 10]),
+          x: useTransform(smoothMouseX, [0, windowSize.width], [-30, 30]),
+          y: useTransform(smoothMouseY, [0, windowSize.height], [-30, 30]),
+          rotate: useTransform(smoothMouseX, [0, windowSize.width], [-10, 10]),
         }}
         animate={{
           scale: [1, 1.2, 1],
@@ -132,11 +143,11 @@ const EmbaixadoresHero = () => {
       />
 
       <motion.div
-        className="absolute bottom-20 right-10 w-80 h-80 border border-[#D4AF37]/20 rounded-full"
+        className="absolute bottom-20 right-10 w-40 h-40 md:w-80 md:h-80 border border-[#D4AF37]/20 rounded-full hidden sm:block"
         style={{
-          x: useTransform(smoothMouseX, [0, window.innerWidth], [30, -30]),
-          y: useTransform(smoothMouseY, [0, window.innerHeight], [30, -30]),
-          rotate: useTransform(smoothMouseX, [0, window.innerWidth], [10, -10]),
+          x: useTransform(smoothMouseX, [0, windowSize.width], [30, -30]),
+          y: useTransform(smoothMouseY, [0, windowSize.height], [30, -30]),
+          rotate: useTransform(smoothMouseX, [0, windowSize.width], [10, -10]),
         }}
         animate={{
           scale: [1, 1.3, 1],
@@ -245,31 +256,21 @@ const EmbaixadoresHero = () => {
             </motion.span>
           </motion.h1>
 
-          {/* Subtitle with Glassmorphism */}
+          {/* Subtitle - Discrete */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto font-light leading-relaxed backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10"
+            className="text-base md:text-lg text-slate-300/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
           >
             {t('hero.subtitle')}
-          </motion.p>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-lg text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed"
-          >
-            {t('hero.description')}
           </motion.p>
 
           {/* CTA Button with Advanced Effects */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.div
               whileHover={{ scale: 1.05 }}

@@ -121,6 +121,12 @@
     "badge": "Nossa Comunidade",
     "title": "Uma família em crescimento",
     "subtitle": "Já somos uma comunidade de profissionais, pacientes e influenciadores que acreditam na transformação através da estética com propósito.",
+    "stats": {
+      "experience": "Anos de Experiência",
+      "experienceDesc": "Excelência em estética integrada",
+      "satisfaction": "Satisfação",
+      "satisfactionDesc": "Índice de recomendação dos pacientes"
+    },
     "instagram": "Siga-nos no Instagram",
     "footerText": "Presente em Portugal, Suíça, França e Luxemburgo, o Instituto Areluna é reconhecido pela excelência em estética integrada e pelos resultados que transformam vidas."
   },
