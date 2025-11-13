@@ -46,8 +46,7 @@ const FormularioEmbaixador = () => {
     setIsSubmitting(true);
 
     try {
-      // Use the Vercel API proxy endpoint
-      const response = await fetch("/api/webhook", {
+      const response = await fetch("https://n8n.automacoesareluna.pt/webhook/lp-embaixadores", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
