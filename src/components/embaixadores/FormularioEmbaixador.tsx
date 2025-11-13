@@ -45,8 +45,19 @@ const FormularioEmbaixador = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://n8n.automacoesareluna.pt/webhook/lp-embaixadores", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       setIsSubmitting(false);
       setIsSuccess(true);
 
@@ -67,7 +78,15 @@ const FormularioEmbaixador = () => {
           motivacao: "",
         });
       }, 3000);
-    }, 2000);
+    } catch (error) {
+      setIsSubmitting(false);
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Erro",
+        description: "Ocorreu um erro ao enviar o formulário. Tente novamente.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
