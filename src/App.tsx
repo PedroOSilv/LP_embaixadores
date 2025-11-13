@@ -10,7 +10,6 @@ import Facetas from "./pages/Facetas";
 import WellenNovato from "./pages/WellenNovato";
 import OpenWeek from "./pages/OpenWeek";
 import Obrigado from "./pages/Obrigado";
-import Embaixadores from "./pages/Embaixadores";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/wellen-novato" element={<WellenNovato />} />
           <Route path="/open-week" element={<OpenWeek />} />
           <Route path="/obrigado" element={<Obrigado />} />
-          <Route path="/embaixadores" element={<Embaixadores />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
