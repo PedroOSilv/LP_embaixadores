@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "badge": "Exklusives Programm",
+    "title1": "Verwandeln Sie Schönheit",
+    "title2": "in Zweck",
+    "subtitle": "Treten Sie unserer Botschafter-Community bei und vertreten Sie Exzellenz in integrierter Ästhetik. Eine einzigartige Gelegenheit, Teil von etwas Größerem zu sein.",
+    "description": "Das Instituto Areluna ist eine europäische Referenz für personalisierte ästhetische Behandlungen. Jetzt laden wir Sie ein, Teil unserer Geschichte zu werden und unsere Vision von Schönheit mit Zweck zu teilen.",
+    "cta": "Ich möchte Areluna-Botschafter werden",
+    "countries": {
+      "portugal": "Portugal",
+      "switzerland": "Schweiz",
+      "france": "Frankreich",
+      "luxembourg": "Luxemburg"
+    }
+  },
+  "about": {
+    "badge": "Europäische Exzellenz",
+    "title": "Wer wir sind",
+    "subtitle": "Das Instituto Areluna ist eine europäische Referenz in integrierter Ästhetik und vereint Mundgesundheit, plastische Chirurgie, Dermatologie und Haarmedizin an einem Ort.",
+    "visionTitle": "Unsere Vision",
+    "visionText1": "Wir glauben, dass wahre Schönheit aus der Integration von Gesundheit, Wohlbefinden und Selbstwertgefühl entsteht. Deshalb entwickeln wir personalisierte Behandlungen, die die Individualität jedes Patienten respektieren.",
+    "visionText2": "Mit Präsenz in Portugal, der Schweiz, Frankreich und Luxemburg ist es unsere Mission, den Zugang zu exzellenter Ästhetik zu demokratisieren und natürliche und dauerhafte Ergebnisse anzubieten.",
+    "visionText3": "Jede Behandlung ist eine einzigartige Reise, geführt von hochqualifizierten Fachleuten und modernster Technologie.",
+    "countriesLabel": "Länder",
+    "countriesDescription": "Ein europäisches Netzwerk der Exzellenz in integrierter Ästhetik",
+    "specialties": {
+      "dental": {
+        "title": "Zahnimplantate",
+        "description": "Fortschrittliche Techniken für vollständige orale Rehabilitation mit natürlichen und dauerhaften Ergebnissen."
+      },
+      "facial": {
+        "title": "Gesichtsharmonisierung",
+        "description": "Personalisierte Behandlungen, die Ihre natürliche Schönheit mit Eleganz und Balance betonen."
+      },
+      "hair": {
+        "title": "Haarmedizin",
+        "description": "Innovative Lösungen für Haarbe​handlung und -wiederherstellung mit Spitzentechnologie."
+      },
+      "body": {
+        "title": "Körperästhetik",
+        "description": "Integrierte Verfahren, die Wohlbefinden und Selbstwertgefühl mit sichtbaren Ergebnissen fördern."
+      }
+    },
+    "quote": "Im Instituto Areluna erzählt jedes Lächeln eine Transformationsgeschichte. Wir sind mehr als eine Klinik — wir sind Partner auf Ihrer Reise zum Selbstvertrauen."
+  },
+  "benefits": {
+    "badge": "Exklusive Vorteile",
+    "title": "Warum werden",
+    "titleHighlight": "Areluna-Botschafter",
+    "subtitle": "Dies ist nicht nur eine Empfehlungsmöglichkeit. Es ist eine Einladung, Teil einer größeren Mission zu werden: Leben durch Schönheit mit Zweck zu transformieren.",
+    "items": {
+      "recognition": {
+        "title": "Exklusive Anerkennung",
+        "description": "Seien Sie Teil einer ausgewählten Gruppe von Botschaftern, die Exzellenz in integrierter Ästhetik repräsentieren."
+      },
+      "rewards": {
+        "title": "Besondere Belohnungen",
+        "description": "Erhalten Sie exklusive Vorteile, Behandlungsrabatte und Boni für jede erfolgreiche Empfehlung."
+      },
+      "platform": {
+        "title": "Plattformzugang",
+        "description": "Greifen Sie auf eine exklusive Plattform zu, um Ihre Empfehlungen und Vorteile in Echtzeit zu verfolgen."
+      },
+      "purpose": {
+        "title": "Zweck und Wirkung",
+        "description": "Helfen Sie Menschen, ihr Leben durch Behandlungen zu transformieren, die Selbstwertgefühl und Wohlbefinden steigern."
+      },
+      "growth": {
+        "title": "Gemeinsames Wachstum",
+        "description": "Wachsen Sie mit uns und seien Sie Teil der Expansion der angesehensten integrierten Ästhetikmarke Europas."
+      },
+      "support": {
+        "title": "Dedizierte Unterstützung",
+        "description": "Verlassen Sie sich auf ein engagiertes Team, das Sie in jeder Phase des Botschafterprogramms unterstützt."
+      }
+    },
+    "ctaTitle": "Mehr als Empfehlungen,",
+    "ctaHighlight": "eine Gemeinschaft mit Zweck",
+    "ctaText": "Als Areluna-Botschafter empfehlen Sie nicht nur — Sie inspirieren Transformationen. Jeder Kunde, den Sie vorstellen, ist ein Leben, das von unserer Mission integrierter Schönheit und vollständigem Wohlbefinden berührt werden kann."
+  },
+  "form": {
+    "badge": "Werden Sie Mitglied",
+    "title1": "Werden Sie Teil unseres",
+    "title2": "Botschafter-Netzwerks",
+    "subtitle": "Füllen Sie das Formular aus und machen Sie den ersten Schritt, um Teil dieser außergewöhnlichen Reise zu werden. Unser Team wird Ihre Bewerbung prüfen und sich bald bei Ihnen melden.",
+    "features": {
+      "feature1": "Sorgfältiger Auswahlprozess",
+      "feature2": "Vollständige Schulung und Unterstützung",
+      "feature3": "Exklusive Plattform für Botschafter",
+      "feature4": "Engagierte und inspirierende Gemeinschaft"
+    },
+    "fields": {
+      "fullName": "Vollständiger Name",
+      "fullNamePlaceholder": "Ihr vollständiger Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihre@email.com",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "+41 123 456 789",
+      "location": "Stadt/Land",
+      "locationPlaceholder": "Zürich, Schweiz",
+      "howFound": "Wie haben Sie von uns erfahren?",
+      "howFoundPlaceholder": "Wählen Sie eine Option",
+      "howFoundOptions": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "google": "Google",
+        "referral": "Empfehlung",
+        "patient": "Ich bin bereits Patient",
+        "other": "Andere"
+      },
+      "motivation": "Warum möchten Sie Botschafter werden?",
+      "motivationPlaceholder": "Erzählen Sie uns ein wenig über Ihre Motivation..."
+    },
+    "submit": "Ich möchte Areluna-Botschafter werden",
+    "submitting": "Senden...",
+    "privacy": "Durch Absenden stimmen Sie unserer Datenschutzrichtlinie und den Bedingungen des Botschafterprogramms zu.",
+    "successTitle": "Bewerbung gesendet!",
+    "successMessage": "Vielen Dank für Ihr Interesse. Wir werden uns bald bei Ihnen melden."
+  },
+  "community": {
+    "badge": "Unsere Gemeinschaft",
+    "title": "Eine wachsende Familie",
+    "subtitle": "Wir sind eine Gemeinschaft von Fachleuten, Patienten und Influencern, die an Transformation durch Ästhetik mit Zweck glauben.",
+    "instagram": "Folgen Sie uns auf Instagram",
+    "footerText": "Präsent in Portugal, der Schweiz, Frankreich und Luxemburg wird das Instituto Areluna für Exzellenz in integrierter Ästhetik und Ergebnisse anerkannt, die Leben transformieren."
+  },
+  "footer": {
+    "description": "Europäische Referenz in integrierter Ästhetik. Leben durch Schönheit mit Zweck seit 2009 transformieren.",
+    "contact": {
+      "title": "Kontakt",
+      "phone": "+351 123 456 789",
+      "schedule": "Montag bis Freitag, 9-18 Uhr",
+      "email": "botschafter@institutoareluna.com",
+      "location": "Porto, Portugal",
+      "countries": "+ Schweiz, Frankreich, Luxemburg"
+    },
+    "program": {
+      "title": "Botschafterprogramm",
+      "howItWorks": "Wie es funktioniert",
+      "benefits": "Vorteile",
+      "terms": "Programmbedingungen",
+      "privacy": "Datenschutzrichtlinie",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "rights": "Alle Rechte vorbehalten.",
+      "terms": "Nutzungsbedingungen",
+      "privacy": "Datenschutz",
+      "cookies": "Cookies"
+    }
+  }
+}

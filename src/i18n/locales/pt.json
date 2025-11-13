@@ -1,0 +1,152 @@
+{
+  "hero": {
+    "badge": "Programa Exclusivo",
+    "title1": "Transforme beleza",
+    "title2": "em propósito",
+    "subtitle": "Junte-se à nossa comunidade de embaixadores e represente a excelência em estética integrada. Uma oportunidade única de fazer parte de algo maior.",
+    "description": "O Instituto Areluna é referência europeia em tratamentos estéticos personalizados. Agora, convidamos você a fazer parte da nossa história e compartilhar nossa visão de beleza com propósito.",
+    "cta": "Quero ser Embaixador(a) Areluna",
+    "countries": {
+      "portugal": "Portugal",
+      "switzerland": "Suíça",
+      "france": "França",
+      "luxembourg": "Luxemburgo"
+    }
+  },
+  "about": {
+    "badge": "Excelência Europeia",
+    "title": "Quem Somos",
+    "subtitle": "O Instituto Areluna é uma referência europeia em estética integrada, unindo saúde oral, cirurgia plástica, dermatologia e medicina capilar em um só lugar.",
+    "visionTitle": "Nossa Visão",
+    "visionText1": "Acreditamos que a verdadeira beleza nasce da integração entre saúde, bem-estar e autoestima. Por isso, desenvolvemos tratamentos personalizados que respeitam a individualidade de cada paciente.",
+    "visionText2": "Com presença em Portugal, Suíça, França e Luxemburgo, nossa missão é democratizar o acesso à estética de excelência, oferecendo resultados naturais e duradouros.",
+    "visionText3": "Cada tratamento é uma jornada única, guiada por profissionais altamente qualificados e tecnologia de última geração.",
+    "countriesLabel": "Países",
+    "countriesDescription": "Uma rede europeia de excelência em estética integrada",
+    "specialties": {
+      "dental": {
+        "title": "Implantes Dentários",
+        "description": "Técnicas avançadas para reabilitação oral completa com resultados naturais e duradouros."
+      },
+      "facial": {
+        "title": "Harmonização Facial",
+        "description": "Tratamentos personalizados que valorizam sua beleza natural com elegância e equilíbrio."
+      },
+      "hair": {
+        "title": "Medicina Capilar",
+        "description": "Soluções inovadoras para tratamento e restauração capilar com tecnologia de ponta."
+      },
+      "body": {
+        "title": "Estética Corporal",
+        "description": "Procedimentos integrados que promovem bem-estar e autoestima com resultados visíveis."
+      }
+    },
+    "quote": "No Instituto Areluna, cada sorriso conta uma história de transformação. Somos mais que uma clínica — somos parceiros na sua jornada de autoconfiança."
+  },
+  "benefits": {
+    "badge": "Benefícios Exclusivos",
+    "title": "Por que ser",
+    "titleHighlight": "Embaixador(a) Areluna",
+    "subtitle": "Esta não é apenas uma oportunidade de indicação. É um convite para fazer parte de uma missão maior: transformar vidas através da beleza com propósito.",
+    "items": {
+      "recognition": {
+        "title": "Reconhecimento Exclusivo",
+        "description": "Faça parte de um grupo seleto de embaixadores que representam a excelência em estética integrada."
+      },
+      "rewards": {
+        "title": "Recompensas Especiais",
+        "description": "Receba benefícios exclusivos, descontos em tratamentos e bonificações por cada indicação bem-sucedida."
+      },
+      "platform": {
+        "title": "Acesso à Plataforma",
+        "description": "Tenha acesso a uma plataforma exclusiva para acompanhar suas indicações e benefícios em tempo real."
+      },
+      "purpose": {
+        "title": "Propósito e Impacto",
+        "description": "Ajude pessoas a transformarem suas vidas através de tratamentos que aumentam autoestima e bem-estar."
+      },
+      "growth": {
+        "title": "Crescimento Conjunto",
+        "description": "Cresça conosco e faça parte da expansão da marca mais prestigiada em estética integrada da Europa."
+      },
+      "support": {
+        "title": "Suporte Dedicado",
+        "description": "Conte com uma equipe dedicada para apoiar você em todas as etapas do programa de embaixadores."
+      }
+    },
+    "ctaTitle": "Mais que indicações,",
+    "ctaHighlight": "uma comunidade de propósito",
+    "ctaText": "Como Embaixador(a) Areluna, você não apenas indica — você inspira transformações. Cada cliente que você apresenta é uma vida que pode ser tocada pela nossa missão de beleza integrada e bem-estar completo."
+  },
+  "form": {
+    "badge": "Junte-se a Nós",
+    "title1": "Faça parte da nossa",
+    "title2": "rede de Embaixadores",
+    "subtitle": "Preencha o formulário e dê o primeiro passo para fazer parte desta jornada extraordinária. Nossa equipe analisará sua candidatura e entrará em contato em breve.",
+    "features": {
+      "feature1": "Processo de seleção cuidadoso",
+      "feature2": "Treinamento e suporte completo",
+      "feature3": "Plataforma exclusiva para embaixadores",
+      "feature4": "Comunidade engajada e inspiradora"
+    },
+    "fields": {
+      "fullName": "Nome Completo",
+      "fullNamePlaceholder": "Seu nome completo",
+      "email": "E-mail",
+      "emailPlaceholder": "seu@email.com",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "+351 123 456 789",
+      "location": "Cidade/País",
+      "locationPlaceholder": "Porto, Portugal",
+      "howFound": "Como nos conheceu?",
+      "howFoundPlaceholder": "Selecione uma opção",
+      "howFoundOptions": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "google": "Google",
+        "referral": "Indicação",
+        "patient": "Já sou paciente",
+        "other": "Outro"
+      },
+      "motivation": "Por que quer ser Embaixador(a)?",
+      "motivationPlaceholder": "Conte-nos um pouco sobre sua motivação..."
+    },
+    "submit": "Quero ser Embaixador(a) Areluna",
+    "submitting": "Enviando...",
+    "privacy": "Ao enviar, você concorda com nossa política de privacidade e termos do programa de embaixadores.",
+    "successTitle": "Inscrição Enviada!",
+    "successMessage": "Obrigado pelo seu interesse. Em breve entraremos em contato."
+  },
+  "community": {
+    "badge": "Nossa Comunidade",
+    "title": "Uma família em crescimento",
+    "subtitle": "Já somos uma comunidade de profissionais, pacientes e influenciadores que acreditam na transformação através da estética com propósito.",
+    "instagram": "Siga-nos no Instagram",
+    "footerText": "Presente em Portugal, Suíça, França e Luxemburgo, o Instituto Areluna é reconhecido pela excelência em estética integrada e pelos resultados que transformam vidas."
+  },
+  "footer": {
+    "description": "Referência europeia em estética integrada. Transformando vidas através da beleza com propósito desde 2009.",
+    "contact": {
+      "title": "Contato",
+      "phone": "+351 123 456 789",
+      "schedule": "Segunda a Sexta, 9h - 18h",
+      "email": "embaixadores@institutoareluna.com",
+      "location": "Porto, Portugal",
+      "countries": "+ Suíça, França, Luxemburgo"
+    },
+    "program": {
+      "title": "Programa de Embaixadores",
+      "howItWorks": "Como Funciona",
+      "benefits": "Benefícios",
+      "terms": "Termos do Programa",
+      "privacy": "Política de Privacidade",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "rights": "Todos os direitos reservados.",
+      "terms": "Termos de Uso",
+      "privacy": "Privacidade",
+      "cookies": "Cookies"
+    }
+  }
+}
