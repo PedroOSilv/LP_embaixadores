@@ -202,11 +202,11 @@ const EmbaixadoresHero = () => {
             className="inline-block mb-4 sm:mb-6"
           >
             <motion.span
-              className="px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-xs sm:text-sm font-medium text-[#D4AF37] tracking-wide shadow-2xl flex items-center gap-2"
+              className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-sm sm:text-base font-medium text-[#D4AF37] tracking-wide shadow-2xl flex items-center gap-2"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
               {t('hero.badge')}
             </motion.span>
           </motion.div>
@@ -216,7 +216,7 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-vivant-black text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-vivant-black text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-4"
             style={{
               textShadow: '0 0 40px rgba(212,175,55,0.3), 0 0 80px rgba(212,175,55,0.2)',
             }}
@@ -261,7 +261,7 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm sm:text-base md:text-lg text-slate-300/80 mb-8 sm:mb-12 max-w-2xl mx-auto font-light leading-relaxed px-3 sm:px-4"
+            className="text-base sm:text-lg md:text-xl text-slate-300/80 mb-8 sm:mb-12 max-w-2xl mx-auto font-light leading-relaxed px-3 sm:px-4"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -310,19 +310,19 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-3 sm:gap-8 text-sm sm:text-base text-slate-300 px-4"
+            className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-2 sm:gap-4 text-base sm:text-lg text-slate-300 px-4"
           >
             {['portugal', 'switzerland', 'france', 'luxembourg'].map((country, index) => (
               <motion.div
                 key={country}
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/10"
+                className="flex items-center gap-2.5 bg-white/5 backdrop-blur-sm px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-white/10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 + index * 0.1 }}
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(212,175,55,0.1)" }}
               >
                 <motion.div
-                  className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#D4AF37] rounded-full"
+                  className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#D4AF37] rounded-full"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [1, 0.5, 1],
@@ -333,7 +333,7 @@ const EmbaixadoresHero = () => {
                     delay: index * 0.2,
                   }}
                 />
-                <span className="text-sm sm:text-base">{t(`hero.countries.${country}`)}</span>
+                <span className="text-base sm:text-lg font-medium">{t(`hero.countries.${country}`)}</span>
               </motion.div>
             ))}
           </motion.div>
