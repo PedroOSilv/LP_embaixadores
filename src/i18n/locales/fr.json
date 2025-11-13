@@ -1,0 +1,159 @@
+{
+  "hero": {
+    "badge": "Programme Exclusif",
+    "title1": "Transformez la beauté",
+    "title2": "en objectif",
+    "subtitle": "Rejoignez notre communauté d'ambassadeurs et représentez l'excellence en esthétique intégrée. Une opportunité unique de faire partie de quelque chose de plus grand.",
+    "description": "L'Institut Areluna est une référence européenne en traitements esthétiques personnalisés. Désormais, nous vous invitons à faire partie de notre histoire et à partager notre vision de la beauté avec objectif.",
+    "cta": "Je veux être Ambassadeur Areluna",
+    "countries": {
+      "portugal": "Portugal",
+      "switzerland": "Suisse",
+      "france": "France",
+      "luxembourg": "Luxembourg"
+    }
+  },
+  "about": {
+    "badge": "Excellence Européenne",
+    "title": "Qui Sommes-Nous",
+    "subtitle": "L'Institut Areluna est une référence européenne en esthétique intégrée, combinant la santé bucco-dentaire, la chirurgie plastique, la dermatologie et la médecine capillaire en un seul lieu.",
+    "visionTitle": "Notre Vision",
+    "visionText1": "Nous croyons que la véritable beauté naît de l'intégration de la santé, du bien-être et de l'estime de soi. C'est pourquoi nous développons des traitements personnalisés qui respectent l'individualité de chaque patient.",
+    "visionText2": "Avec une présence au Portugal, en Suisse, en France et au Luxembourg, notre mission est de démocratiser l'accès à l'esthétique d'excellence, en offrant des résultats naturels et durables.",
+    "visionText3": "Chaque traitement est un parcours unique, guidé par des professionnels hautement qualifiés et une technologie de pointe.",
+    "countriesLabel": "Pays",
+    "countriesDescription": "Un réseau européen d'excellence en esthétique intégrée",
+    "specialties": {
+      "dental": {
+        "title": "Implants Dentaires",
+        "description": "Techniques avancées pour une réhabilitation buccale complète avec des résultats naturels et durables."
+      },
+      "facial": {
+        "title": "Harmonisation Faciale",
+        "description": "Traitements personnalisés qui valorisent votre beauté naturelle avec élégance et équilibre."
+      },
+      "hair": {
+        "title": "Médecine Capillaire",
+        "description": "Solutions innovantes pour le traitement et la restauration des cheveux avec une technologie de pointe."
+      },
+      "body": {
+        "title": "Esthétique Corporelle",
+        "description": "Procédures intégrées qui favorisent le bien-être et l'estime de soi avec des résultats visibles."
+      }
+    },
+    "quote": "À l'Institut Areluna, chaque sourire raconte une histoire de transformation. Nous sommes bien plus qu'une clinique — nous sommes des partenaires dans votre parcours de confiance en soi."
+  },
+  "benefits": {
+    "badge": "Avantages Exclusifs",
+    "title": "Pourquoi devenir",
+    "titleHighlight": "Ambassadeur Areluna",
+    "subtitle": "Ce n'est pas simplement une opportunité de recommandation. C'est une invitation à faire partie d'une mission plus grande : transformer des vies par la beauté avec objectif.",
+    "items": {
+      "recognition": {
+        "title": "Reconnaissance Exclusive",
+        "description": "Faites partie d'un groupe sélect d'ambassadeurs représentant l'excellence en esthétique intégrée."
+      },
+      "rewards": {
+        "title": "Récompenses Spéciales",
+        "description": "Recevez des avantages exclusifs, des réductions sur les traitements et des bonus pour chaque recommandation réussie."
+      },
+      "platform": {
+        "title": "Accès à la Plateforme",
+        "description": "Accédez à une plateforme exclusive pour suivre vos recommandations et vos avantages en temps réel."
+      },
+      "purpose": {
+        "title": "Objectif et Impact",
+        "description": "Aidez les gens à transformer leurs vies par des traitements qui augmentent l'estime de soi et le bien-être."
+      },
+      "growth": {
+        "title": "Croissance Conjointe",
+        "description": "Grandissez avec nous et faites partie de l'expansion de la marque la plus prestigieuse d'esthétique intégrée d'Europe."
+      },
+      "support": {
+        "title": "Support Dédié",
+        "description": "Comptez sur une équipe dévouée pour vous soutenir à chaque étape du programme d'ambassadeurs."
+      }
+    },
+    "ctaTitle": "Plus que des recommandations,",
+    "ctaHighlight": "une communauté d'objectif",
+    "ctaText": "En tant qu'Ambassadeur Areluna, vous ne faites pas que recommander — vous inspirez des transformations. Chaque client que vous présentez est une vie qui peut être touchée par notre mission de beauté intégrée et de bien-être complet."
+  },
+  "form": {
+    "badge": "Rejoignez-Nous",
+    "title1": "Faites partie de notre",
+    "title2": "réseau d'ambassadeurs",
+    "subtitle": "Remplissez le formulaire et franchissez la première étape pour faire partie de ce parcours extraordinaire. Notre équipe examinera votre candidature et vous contactera bientôt.",
+    "features": {
+      "feature1": "Processus de sélection rigoureux",
+      "feature2": "Formation et support complets",
+      "feature3": "Plateforme exclusive pour les ambassadeurs",
+      "feature4": "Communauté engagée et inspirante"
+    },
+    "fields": {
+      "fullName": "Nom Complet",
+      "fullNamePlaceholder": "Votre nom complet",
+      "email": "E-mail",
+      "emailPlaceholder": "votre@email.com",
+      "whatsapp": "WhatsApp",
+      "whatsappPlaceholder": "+351 123 456 789",
+      "location": "Ville/Pays",
+      "locationPlaceholder": "Porto, Portugal",
+      "howFound": "Comment nous avez-vous trouvés?",
+      "howFoundPlaceholder": "Sélectionnez une option",
+      "howFoundOptions": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "google": "Google",
+        "referral": "Recommandation",
+        "patient": "Je suis déjà patient",
+        "other": "Autre"
+      },
+      "motivation": "Pourquoi voulez-vous être Ambassadeur?",
+      "motivationPlaceholder": "Parlez-nous un peu de votre motivation..."
+    },
+    "submit": "Je veux être Ambassadeur Areluna",
+    "submitting": "Envoi...",
+    "privacy": "En soumettant, vous acceptez notre politique de confidentialité et les conditions du programme d'ambassadeurs.",
+    "successTitle": "Candidature Envoyée!",
+    "successMessage": "Merci de votre intérêt. Nous vous recontacterons bientôt."
+  },
+  "community": {
+    "badge": "Notre Communauté",
+    "title": "Une Famille en Croissance",
+    "subtitle": "Nous sommes une communauté de professionnels, de patients et d'influenceurs qui croient à la transformation par l'esthétique avec objectif.",
+    "stats": {
+      "experience": "Années d'Expérience",
+      "experienceDesc": "Excellence en esthétique intégrée",
+      "satisfaction": "Satisfaction",
+      "satisfactionDesc": "Taux de recommandation des patients"
+    },
+    "instagram": "Suivez-nous sur Instagram",
+    "footerText": "Présent au Portugal, en Suisse, en France et au Luxembourg, l'Institut Areluna est reconnu pour son excellence en esthétique intégrée et ses résultats qui transforment les vies."
+  },
+  "footer": {
+    "description": "Référence européenne en esthétique intégrée. Transformer les vies par la beauté avec objectif depuis 6 ans.",
+    "contact": {
+      "title": "Contacts",
+      "phone": "+351 966 939 539 | +351 220 430 090",
+      "schedule": "* Coût d'appel pour réseau fixe ou réseau mobile national",
+      "email": "",
+      "location": "Rua de Júlio Dinis 194 R/C, 4050-024 Porto",
+      "countries": "Entité de Régulation de la Santé - Nº d'Enregistrement à l'ERS: E161637 | Nº de permis d'exploitation: 21593/2022"
+    },
+    "program": {
+      "title": "Programme d'Ambassadeurs",
+      "howItWorks": "Comment ça Marche",
+      "benefits": "Avantages",
+      "terms": "Conditions du Programme",
+      "privacy": "Politique de Confidentialité",
+      "faq": "FAQ"
+    },
+    "legal": {
+      "rights": "Tous les droits réservés.",
+      "terms": "Conditions d'Utilisation",
+      "privacy": "Confidentialité",
+      "cookies": "Cookies"
+    }
+  }
+}
+

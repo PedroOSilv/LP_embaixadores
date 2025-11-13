@@ -160,9 +160,9 @@ const EmbaixadoresHero = () => {
         }}
       />
 
-      {/* Glowing Orbs */}
+      {/* Glowing Orbs - Adjusted for mobile */}
       <motion.div
-        className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-[#D4AF37]/20 to-transparent rounded-full blur-3xl"
+        className="absolute top-1/4 right-1/4 w-48 h-48 md:w-96 md:h-96 bg-gradient-to-br from-[#D4AF37]/20 to-transparent rounded-full blur-3xl"
         animate={{
           scale: [1, 1.5, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -177,7 +177,7 @@ const EmbaixadoresHero = () => {
       />
 
       <motion.div
-        className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl"
+        className="absolute bottom-1/4 left-1/4 w-48 h-48 md:w-96 md:h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl"
         animate={{
           scale: [1, 1.4, 1],
           opacity: [0.2, 0.5, 0.2],
@@ -192,21 +192,21 @@ const EmbaixadoresHero = () => {
       />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-16 sm:py-20 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge with Glassmorphism */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block mb-6"
+            className="inline-block mb-4 sm:mb-6"
           >
             <motion.span
-              className="px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-sm font-medium text-[#D4AF37] tracking-wide shadow-2xl flex items-center gap-2"
+              className="px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-xs sm:text-sm font-medium text-[#D4AF37] tracking-wide shadow-2xl flex items-center gap-2"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
               {t('hero.badge')}
             </motion.span>
           </motion.div>
@@ -216,7 +216,7 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-vivant-black text-white mb-6 leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-vivant-black text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-4"
             style={{
               textShadow: '0 0 40px rgba(212,175,55,0.3), 0 0 80px rgba(212,175,55,0.2)',
             }}
@@ -261,7 +261,7 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base md:text-lg text-slate-300/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-xs sm:text-sm md:text-base text-slate-300/80 mb-8 sm:mb-12 max-w-2xl mx-auto font-light leading-relaxed px-3 sm:px-4"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -280,7 +280,7 @@ const EmbaixadoresHero = () => {
               <Button
                 onClick={scrollToForm}
                 size="lg"
-                className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] hover:from-[#F4E5B5] hover:via-[#D4AF37] hover:to-[#F4E5B5] text-slate-900 px-10 py-7 text-lg rounded-full shadow-2xl hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 group overflow-hidden font-semibold"
+                className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] hover:from-[#F4E5B5] hover:via-[#D4AF37] hover:to-[#F4E5B5] text-slate-900 px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base rounded-full shadow-2xl hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 group overflow-hidden font-semibold"
                 style={{
                   backgroundSize: '200% auto',
                 }}
@@ -297,9 +297,9 @@ const EmbaixadoresHero = () => {
                     ease: "linear",
                   }}
                 />
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center text-xs sm:text-sm">
                   {t('hero.cta')}
-                  <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </Button>
             </motion.div>
@@ -310,19 +310,19 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-slate-300"
+            className="mt-16 flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-slate-300 px-4"
           >
             {['portugal', 'switzerland', 'france', 'luxembourg'].map((country, index) => (
               <motion.div
                 key={country}
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10"
+                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 + index * 0.1 }}
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(212,175,55,0.1)" }}
               >
                 <motion.div
-                  className="w-2 h-2 bg-[#D4AF37] rounded-full"
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#D4AF37] rounded-full"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [1, 0.5, 1],
@@ -333,7 +333,7 @@ const EmbaixadoresHero = () => {
                     delay: index * 0.2,
                   }}
                 />
-                <span>{t(`hero.countries.${country}`)}</span>
+                <span className="text-xs sm:text-sm">{t(`hero.countries.${country}`)}</span>
               </motion.div>
             ))}
           </motion.div>

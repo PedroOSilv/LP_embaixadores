@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Crown, Gift, Target, Lightbulb, TrendingUp, Shield } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -44,6 +44,7 @@ const PorqueSerEmbaixador = () => {
 
   const Card3D = ({ benefit, index }: { benefit: typeof benefits[0]; index: number }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
 
     const mouseX = useMotionValue(0);
@@ -52,8 +53,17 @@ const PorqueSerEmbaixador = () => {
     const rotateX = useTransform(mouseY, [-100, 100], [10, -10]);
     const rotateY = useTransform(mouseX, [-100, 100], [-10, 10]);
 
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!cardRef.current) return;
+      if (!cardRef.current || isMobile) return;
       const rect = cardRef.current.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
@@ -70,24 +80,24 @@ const PorqueSerEmbaixador = () => {
     return (
       <motion.div
         ref={cardRef}
-        initial={{ opacity: 0, y: 60, rotateX: -15 }}
+        initial={{ opacity: 0, y: 60, rotateX: isMobile ? 0 : -15 }}
         animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
         transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
         onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseEnter={() => !isMobile && setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
         style={{
-          perspective: 1000,
-          transformStyle: "preserve-3d",
-          rotateX,
-          rotateY,
+          perspective: isMobile ? 'none' : 1000,
+          transformStyle: isMobile ? 'flat' : "preserve-3d",
+          rotateX: isMobile ? 0 : rotateX,
+          rotateY: isMobile ? 0 : rotateY,
         }}
         className="group relative"
       >
         <motion.div
-          className="relative bg-gradient-to-br from-white via-white to-slate-50 rounded-3xl p-8 h-full border border-slate-200 overflow-hidden"
+          className="relative bg-gradient-to-br from-white via-white to-slate-50 rounded-3xl p-6 sm:p-8 h-full border border-slate-200 overflow-hidden"
           style={{
-            transformStyle: "preserve-3d",
+            transformStyle: isMobile ? 'flat' : "preserve-3d",
           }}
           animate={{
             boxShadow: isHovered
@@ -159,9 +169,9 @@ const PorqueSerEmbaixador = () => {
           >
             {/* Icon with 3D Effect */}
             <motion.div
-              className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-3xl flex items-center justify-center mb-6 relative`}
+              className={`w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${benefit.color} rounded-3xl flex items-center justify-center mb-4 sm:mb-6 relative`}
               style={{
-                transform: isHovered ? "translateZ(60px)" : "translateZ(20px)",
+                transform: isMobile ? "translateZ(0px)" : (isHovered ? "translateZ(60px)" : "translateZ(20px)"),
                 transition: "transform 0.3s ease-out",
               }}
               animate={{
@@ -182,7 +192,7 @@ const PorqueSerEmbaixador = () => {
                   repeat: isHovered ? Infinity : 0,
                 }}
               >
-                <benefit.icon className="w-10 h-10 text-white relative z-10" />
+                <benefit.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white relative z-10" />
               </motion.div>
 
               {/* Icon Glow */}
@@ -204,18 +214,18 @@ const PorqueSerEmbaixador = () => {
 
             {/* Content */}
             <motion.h3
-              className="text-2xl font-vivant-medium text-slate-900 mb-4"
+              className="text-xl sm:text-2xl font-vivant-medium text-slate-900 mb-3 sm:mb-4"
               style={{
-                transform: isHovered ? "translateZ(30px)" : "translateZ(10px)",
+                transform: isMobile ? "translateZ(0px)" : (isHovered ? "translateZ(30px)" : "translateZ(10px)"),
                 transition: "transform 0.3s ease-out",
               }}
             >
               {t(`benefits.items.${benefit.key}.title`)}
             </motion.h3>
             <motion.p
-              className="text-slate-600 leading-relaxed"
+              className="text-sm sm:text-base text-slate-600 leading-relaxed"
               style={{
-                transform: isHovered ? "translateZ(20px)" : "translateZ(5px)",
+                transform: isMobile ? "translateZ(0px)" : (isHovered ? "translateZ(20px)" : "translateZ(5px)"),
                 transition: "transform 0.3s ease-out",
               }}
             >
@@ -310,10 +320,10 @@ const PorqueSerEmbaixador = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-14 sm:mb-20"
           >
             <motion.span
-              className="text-[#D4AF37] font-medium tracking-wider text-sm uppercase mb-4 block"
+              className="text-[#D4AF37] font-medium tracking-wider text-xs sm:text-sm uppercase mb-2 sm:mb-4 block"
               animate={{
                 opacity: [0.7, 1, 0.7],
               }}
@@ -326,7 +336,7 @@ const PorqueSerEmbaixador = () => {
               {t('benefits.badge')}
             </motion.span>
             <motion.h2
-              className="text-4xl md:text-5xl lg:text-6xl font-vivant-black text-slate-900 mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-vivant-black text-slate-900 mb-4 sm:mb-6 px-3"
               style={{
                 textShadow: "0 0 40px rgba(212,175,55,0.1)",
               }}
@@ -351,7 +361,7 @@ const PorqueSerEmbaixador = () => {
               </motion.span>
             </motion.h2>
             <motion.p
-              className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed px-3"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.4 }}
@@ -361,7 +371,7 @@ const PorqueSerEmbaixador = () => {
           </motion.div>
 
           {/* Benefits Grid with 3D Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 px-2">
             {benefits.map((benefit, index) => (
               <Card3D key={index} benefit={benefit} index={index} />
             ))}
@@ -372,7 +382,7 @@ const PorqueSerEmbaixador = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-12 md:p-16 text-center overflow-hidden"
+            className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-14 text-center overflow-hidden mx-2"
           >
             {/* Animated Background Pattern */}
             <motion.div
@@ -394,7 +404,7 @@ const PorqueSerEmbaixador = () => {
 
             <div className="relative z-10">
               <motion.h3
-                className="text-3xl md:text-4xl font-vivant-black text-white mb-6"
+                className="text-xl sm:text-2xl md:text-3xl font-vivant-black text-white mb-3 sm:mb-4"
                 animate={{
                   textShadow: [
                     "0 0 20px rgba(212,175,55,0.3)",
@@ -412,7 +422,7 @@ const PorqueSerEmbaixador = () => {
                 <br />
                 <span className="text-[#D4AF37]">{t('benefits.ctaHighlight')}</span>
               </motion.h3>
-              <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
                 {t('benefits.ctaText')}
               </p>
             </div>
