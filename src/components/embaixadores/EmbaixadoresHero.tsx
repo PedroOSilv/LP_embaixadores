@@ -216,7 +216,7 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-vivant-black text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-vivant-black text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-4"
             style={{
               textShadow: '0 0 40px rgba(212,175,55,0.3), 0 0 80px rgba(212,175,55,0.2)',
             }}
@@ -261,7 +261,7 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xs sm:text-sm md:text-base text-slate-300/80 mb-8 sm:mb-12 max-w-2xl mx-auto font-light leading-relaxed px-3 sm:px-4"
+            className="text-sm sm:text-base md:text-lg text-slate-300/80 mb-8 sm:mb-12 max-w-2xl mx-auto font-light leading-relaxed px-3 sm:px-4"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -280,7 +280,7 @@ const EmbaixadoresHero = () => {
               <Button
                 onClick={scrollToForm}
                 size="lg"
-                className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] hover:from-[#F4E5B5] hover:via-[#D4AF37] hover:to-[#F4E5B5] text-slate-900 px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-base rounded-full shadow-2xl hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 group overflow-hidden font-semibold"
+                className="relative bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] hover:from-[#F4E5B5] hover:via-[#D4AF37] hover:to-[#F4E5B5] text-slate-900 px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base rounded-full shadow-2xl hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 group overflow-hidden font-semibold"
                 style={{
                   backgroundSize: '200% auto',
                 }}
@@ -297,9 +297,9 @@ const EmbaixadoresHero = () => {
                     ease: "linear",
                   }}
                 />
-                <span className="relative z-10 flex items-center text-xs sm:text-sm">
+                <span className="relative z-10 flex items-center text-sm sm:text-base">
                   {t('hero.cta')}
-                  <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </Button>
             </motion.div>
@@ -310,19 +310,19 @@ const EmbaixadoresHero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="mt-16 flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-slate-300 px-4"
+            className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-3 sm:gap-8 text-sm sm:text-base text-slate-300 px-4"
           >
             {['portugal', 'switzerland', 'france', 'luxembourg'].map((country, index) => (
               <motion.div
                 key={country}
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10"
+                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/10"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 + index * 0.1 }}
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(212,175,55,0.1)" }}
               >
                 <motion.div
-                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#D4AF37] rounded-full"
+                  className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#D4AF37] rounded-full"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [1, 0.5, 1],
@@ -333,7 +333,7 @@ const EmbaixadoresHero = () => {
                     delay: index * 0.2,
                   }}
                 />
-                <span className="text-xs sm:text-sm">{t(`hero.countries.${country}`)}</span>
+                <span className="text-sm sm:text-base">{t(`hero.countries.${country}`)}</span>
               </motion.div>
             ))}
           </motion.div>
