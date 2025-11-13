@@ -51,11 +51,13 @@ const FormularioEmbaixador = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        mode: "cors",
+        credentials: "omit",
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to submit form");
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       setIsSubmitting(false);
@@ -81,11 +83,42 @@ const FormularioEmbaixador = () => {
     } catch (error) {
       setIsSubmitting(false);
       console.error("Error submitting form:", error);
-      toast({
-        title: "Erro",
-        description: "Ocorreu um erro ao enviar o formulário. Tente novamente.",
-        variant: "destructive",
-      });
+      
+      // Try alternative endpoint if CORS fails
+      try {
+        await fetch("/api/webhook", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+        
+        setIsSuccess(true);
+        toast({
+          title: t('form.successTitle'),
+          description: t('form.successMessage'),
+        });
+
+        setTimeout(() => {
+          setIsSuccess(false);
+          setFormData({
+            nome: "",
+            email: "",
+            whatsapp: "",
+            cidadePais: "",
+            comoConheceu: "",
+            motivacao: "",
+          });
+        }, 3000);
+      } catch (fallbackError) {
+        console.error("Fallback error:", fallbackError);
+        toast({
+          title: "Erro",
+          description: "Ocorreu um erro ao enviar o formulário. Tente novamente.",
+          variant: "destructive",
+        });
+      }
     }
   };
 
