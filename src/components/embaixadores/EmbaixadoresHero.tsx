@@ -15,8 +15,8 @@ const EmbaixadoresHero = () => {
   const smoothMouseX = useSpring(mouseX, { damping: 50, stiffness: 400 });
   const smoothMouseY = useSpring(mouseY, { damping: 50, stiffness: 400 });
 
-  const parallaxX = useTransform(smoothMouseX, [0, window.innerWidth], [-50, 50]);
-  const parallaxY = useTransform(smoothMouseY, [0, window.innerHeight], [-50, 50]);
+  const parallaxX = useTransform(smoothMouseX, [0, window.innerWidth], [-20, 20]);
+  const parallaxY = useTransform(smoothMouseY, [0, window.innerHeight], [-20, 20]);
 
   useEffect(() => {
     mouseX.set(mousePosition.x);
@@ -44,26 +44,27 @@ const EmbaixadoresHero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Dynamic Background with Clinic Image */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{
-          x: parallaxX,
-          y: parallaxY,
-        }}
-      >
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div
+          className="absolute w-[120%] h-[120%] -left-[10%] -top-[10%]"
           style={{
-            backgroundImage: 'url(/lovable-uploads/c3666a59-2f87-4c93-a341-911c9b6c6777.png)',
-            filter: 'brightness(0.3) blur(8px)',
-            transform: 'scale(1.2)',
+            x: parallaxX,
+            y: parallaxY,
           }}
-        />
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
+            style={{
+              backgroundImage: 'url(/lovable-uploads/c3666a59-2f87-4c93-a341-911c9b6c6777.png)',
+              filter: 'brightness(0.3) blur(8px)',
+            }}
+          />
+        </motion.div>
 
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95" />
         <div className="absolute inset-0 bg-gradient-to-tr from-[#D4AF37]/10 via-transparent to-[#D4AF37]/5" />
-      </motion.div>
+      </div>
 
       {/* Animated Mesh Gradient */}
       <div className="absolute inset-0 z-0 opacity-30">
