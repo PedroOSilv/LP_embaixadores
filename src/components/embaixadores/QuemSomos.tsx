@@ -2,31 +2,29 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Sparkles, Heart, Award, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const QuemSomos = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const features = [
     {
       icon: Sparkles,
-      title: "Implantes Dentários",
-      description: "Técnicas avançadas para reabilitação oral completa com resultados naturais e duradouros.",
+      key: "dental",
     },
     {
       icon: Heart,
-      title: "Harmonização Facial",
-      description: "Tratamentos personalizados que valorizam sua beleza natural com elegância e equilíbrio.",
+      key: "facial",
     },
     {
       icon: Award,
-      title: "Medicina Capilar",
-      description: "Soluções inovadoras para tratamento e restauração capilar com tecnologia de ponta.",
+      key: "hair",
     },
     {
       icon: Users,
-      title: "Estética Corporal",
-      description: "Procedimentos integrados que promovem bem-estar e autoestima com resultados visíveis.",
+      key: "body",
     },
   ];
 
@@ -46,14 +44,13 @@ const QuemSomos = () => {
             className="text-center mb-16"
           >
             <span className="text-[#D4AF37] font-medium tracking-wider text-sm uppercase mb-4 block">
-              Excelência Europeia
+              {t('about.badge')}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-vivant-black text-slate-900 mb-6">
-              Quem Somos
+              {t('about.title')}
             </h2>
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              O Instituto Areluna é uma referência europeia em estética integrada, unindo
-              saúde oral, cirurgia plástica, dermatologia e medicina capilar em um só lugar.
+              {t('about.subtitle')}
             </p>
           </motion.div>
 
@@ -67,21 +64,16 @@ const QuemSomos = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl md:text-4xl font-vivant-medium text-slate-900 mb-6">
-                  Nossa Visão
+                  {t('about.visionTitle')}
                 </h3>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Acreditamos que a verdadeira beleza nasce da integração entre saúde,
-                  bem-estar e autoestima. Por isso, desenvolvemos tratamentos personalizados
-                  que respeitam a individualidade de cada paciente.
+                  {t('about.visionText1')}
                 </p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Com presença em <strong>Portugal, Suíça, França e Luxemburgo</strong>,
-                  nossa missão é democratizar o acesso à estética de excelência, oferecendo
-                  resultados naturais e duradouros.
+                  {t('about.visionText2')}
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  Cada tratamento é uma jornada única, guiada por profissionais altamente
-                  qualificados e tecnologia de última geração.
+                  {t('about.visionText3')}
                 </p>
               </div>
 
@@ -92,10 +84,10 @@ const QuemSomos = () => {
                       4+
                     </div>
                     <p className="text-xl text-slate-700 font-medium">
-                      Países
+                      {t('about.countriesLabel')}
                     </p>
                     <p className="text-slate-600 mt-4">
-                      Uma rede europeia de excelência em estética integrada
+                      {t('about.countriesDescription')}
                     </p>
                   </div>
                 </div>
@@ -118,10 +110,10 @@ const QuemSomos = () => {
                     <feature.icon className="w-6 h-6 text-[#D4AF37]" />
                   </div>
                   <h4 className="text-xl font-vivant-medium text-slate-900 mb-3">
-                    {feature.title}
+                    {t(`about.specialties.${feature.key}.title`)}
                   </h4>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    {feature.description}
+                    {t(`about.specialties.${feature.key}.description`)}
                   </p>
                 </div>
               </motion.div>
@@ -136,8 +128,7 @@ const QuemSomos = () => {
             className="mt-16 text-center"
           >
             <p className="text-xl md:text-2xl font-vivant-light text-slate-700 italic max-w-4xl mx-auto">
-              "No Instituto Areluna, cada sorriso conta uma história de transformação.
-              Somos mais que uma clínica — somos parceiros na sua jornada de autoconfiança."
+              {t('about.quote')}
             </p>
           </motion.div>
         </div>

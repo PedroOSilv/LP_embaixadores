@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const EmbaixadoresFooter = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -24,8 +26,7 @@ const EmbaixadoresFooter = () => {
                 Instituto Areluna
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Referência europeia em estética integrada. Transformando vidas através
-                da beleza com propósito desde 2009.
+                {t('footer.description')}
               </p>
               <div className="flex gap-4">
                 <a
@@ -52,26 +53,26 @@ const EmbaixadoresFooter = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h4 className="text-lg font-vivant-medium mb-6">Contato</h4>
+              <h4 className="text-lg font-vivant-medium mb-6">{t('footer.contact.title')}</h4>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3 text-slate-400">
                   <Phone className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                   <div>
-                    <p>+351 123 456 789</p>
-                    <p className="text-xs">Segunda a Sexta, 9h - 18h</p>
+                    <p>{t('footer.contact.phone')}</p>
+                    <p className="text-xs">{t('footer.contact.schedule')}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 text-slate-400">
                   <Mail className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                   <div>
-                    <p>embaixadores@institutoareluna.com</p>
+                    <p>{t('footer.contact.email')}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 text-slate-400">
                   <MapPin className="w-5 h-5 text-[#D4AF37] flex-shrink-0 mt-0.5" />
                   <div>
-                    <p>Porto, Portugal</p>
-                    <p className="text-xs">+ Suíça, França, Luxemburgo</p>
+                    <p>{t('footer.contact.location')}</p>
+                    <p className="text-xs">{t('footer.contact.countries')}</p>
                   </div>
                 </li>
               </ul>
@@ -85,32 +86,32 @@ const EmbaixadoresFooter = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h4 className="text-lg font-vivant-medium mb-6">
-                Programa de Embaixadores
+                {t('footer.program.title')}
               </h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li>
                   <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                    Como Funciona
+                    {t('footer.program.howItWorks')}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                    Benefícios
+                    {t('footer.program.benefits')}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                    Termos do Programa
+                    {t('footer.program.terms')}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                    Política de Privacidade
+                    {t('footer.program.privacy')}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                    FAQ
+                    {t('footer.program.faq')}
                   </a>
                 </li>
               </ul>
@@ -129,17 +130,17 @@ const EmbaixadoresFooter = () => {
             className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500"
           >
             <p>
-              © {currentYear} Instituto Areluna. Todos os direitos reservados.
+              © {currentYear} Instituto Areluna. {t('footer.legal.rights')}
             </p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                Termos de Uso
+                {t('footer.legal.terms')}
               </a>
               <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                Privacidade
+                {t('footer.legal.privacy')}
               </a>
               <a href="#" className="hover:text-[#D4AF37] transition-colors">
-                Cookies
+                {t('footer.legal.cookies')}
               </a>
             </div>
           </motion.div>

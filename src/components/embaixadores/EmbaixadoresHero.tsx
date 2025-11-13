@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useMousePosition } from "@/hooks/useMousePosition";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const EmbaixadoresHero = () => {
+  const { t } = useTranslation();
   const mousePosition = useMousePosition();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
@@ -194,7 +196,7 @@ const EmbaixadoresHero = () => {
               transition={{ type: "spring", stiffness: 400 }}
             >
               <Sparkles className="w-4 h-4" />
-              Programa Exclusivo
+              {t('hero.badge')}
             </motion.span>
           </motion.div>
 
@@ -222,7 +224,7 @@ const EmbaixadoresHero = () => {
                 ease: "easeInOut",
               }}
             >
-              Transforme beleza
+              {t('hero.title1')}
             </motion.span>
             <br />
             <motion.span
@@ -239,7 +241,7 @@ const EmbaixadoresHero = () => {
                 backgroundSize: '200% auto',
               }}
             >
-              em propósito
+              {t('hero.title2')}
             </motion.span>
           </motion.h1>
 
@@ -250,8 +252,7 @@ const EmbaixadoresHero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto font-light leading-relaxed backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10"
           >
-            Junte-se à nossa comunidade de embaixadores e represente a excelência
-            em estética integrada. Uma oportunidade única de fazer parte de algo maior.
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* Description */}
@@ -261,9 +262,7 @@ const EmbaixadoresHero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-base md:text-lg text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            O Instituto Areluna é referência europeia em tratamentos estéticos personalizados.
-            Agora, convidamos você a fazer parte da nossa história e compartilhar nossa visão
-            de beleza com propósito.
+            {t('hero.description')}
           </motion.p>
 
           {/* CTA Button with Advanced Effects */}
@@ -298,7 +297,7 @@ const EmbaixadoresHero = () => {
                   }}
                 />
                 <span className="relative z-10 flex items-center">
-                  Quero ser Embaixador(a) Areluna
+                  {t('hero.cta')}
                   <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
               </Button>
@@ -312,7 +311,7 @@ const EmbaixadoresHero = () => {
             transition={{ duration: 1, delay: 1 }}
             className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-slate-300"
           >
-            {['Portugal', 'Suíça', 'França', 'Luxemburgo'].map((country, index) => (
+            {['portugal', 'switzerland', 'france', 'luxembourg'].map((country, index) => (
               <motion.div
                 key={country}
                 className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10"
@@ -333,7 +332,7 @@ const EmbaixadoresHero = () => {
                     delay: index * 0.2,
                   }}
                 />
-                <span>{country}</span>
+                <span>{t(`hero.countries.${country}`)}</span>
               </motion.div>
             ))}
           </motion.div>

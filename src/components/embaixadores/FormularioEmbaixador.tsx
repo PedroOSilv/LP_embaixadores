@@ -14,8 +14,10 @@ import {
 } from "@/components/ui/select";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const FormularioEmbaixador = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
@@ -49,8 +51,8 @@ const FormularioEmbaixador = () => {
       setIsSuccess(true);
 
       toast({
-        title: "Inscrição enviada com sucesso!",
-        description: "Em breve entraremos em contato com você.",
+        title: t('form.successTitle'),
+        description: t('form.successMessage'),
       });
 
       // Reset form after 3 seconds
@@ -89,27 +91,20 @@ const FormularioEmbaixador = () => {
               className="lg:sticky lg:top-24"
             >
               <span className="text-[#D4AF37] font-medium tracking-wider text-sm uppercase mb-4 block">
-                Junte-se a Nós
+                {t('form.badge')}
               </span>
               <h2 className="text-4xl md:text-5xl font-vivant-black text-slate-900 mb-6">
-                Faça parte da nossa
+                {t('form.title1')}
                 <br />
-                <span className="text-[#D4AF37]">rede de Embaixadores</span>
+                <span className="text-[#D4AF37]">{t('form.title2')}</span>
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Preencha o formulário ao lado e dê o primeiro passo para fazer parte
-                desta jornada extraordinária. Nossa equipe analisará sua candidatura
-                e entrará em contato em breve.
+                {t('form.subtitle')}
               </p>
 
               {/* Features */}
               <div className="space-y-4">
-                {[
-                  "Processo de seleção cuidadoso",
-                  "Treinamento e suporte completo",
-                  "Plataforma exclusiva para embaixadores",
-                  "Comunidade engajada e inspiradora",
-                ].map((feature, index) => (
+                {['feature1', 'feature2', 'feature3', 'feature4'].map((feature, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -120,7 +115,7 @@ const FormularioEmbaixador = () => {
                     <div className="w-6 h-6 bg-[#D4AF37]/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-[#D4AF37]" />
                     </div>
-                    <span className="text-slate-700">{feature}</span>
+                    <span className="text-slate-700">{t(`form.features.${feature}`)}</span>
                   </motion.div>
                 ))}
               </div>
@@ -138,7 +133,7 @@ const FormularioEmbaixador = () => {
                     {/* Nome Completo */}
                     <div className="space-y-2">
                       <Label htmlFor="nome" className="text-slate-700 font-medium">
-                        Nome Completo *
+                        {t('form.fields.fullName')} *
                       </Label>
                       <Input
                         id="nome"
@@ -146,7 +141,7 @@ const FormularioEmbaixador = () => {
                         required
                         value={formData.nome}
                         onChange={(e) => handleInputChange("nome", e.target.value)}
-                        placeholder="Seu nome completo"
+                        placeholder={t('form.fields.fullNamePlaceholder')}
                         className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                       />
                     </div>
@@ -154,7 +149,7 @@ const FormularioEmbaixador = () => {
                     {/* Email */}
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-slate-700 font-medium">
-                        E-mail *
+                        {t('form.fields.email')} *
                       </Label>
                       <Input
                         id="email"
@@ -162,7 +157,7 @@ const FormularioEmbaixador = () => {
                         required
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
-                        placeholder="seu@email.com"
+                        placeholder={t('form.fields.emailPlaceholder')}
                         className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                       />
                     </div>
@@ -170,7 +165,7 @@ const FormularioEmbaixador = () => {
                     {/* WhatsApp */}
                     <div className="space-y-2">
                       <Label htmlFor="whatsapp" className="text-slate-700 font-medium">
-                        WhatsApp *
+                        {t('form.fields.whatsapp')} *
                       </Label>
                       <Input
                         id="whatsapp"
@@ -178,7 +173,7 @@ const FormularioEmbaixador = () => {
                         required
                         value={formData.whatsapp}
                         onChange={(e) => handleInputChange("whatsapp", e.target.value)}
-                        placeholder="+351 123 456 789"
+                        placeholder={t('form.fields.whatsappPlaceholder')}
                         className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                       />
                     </div>
@@ -186,7 +181,7 @@ const FormularioEmbaixador = () => {
                     {/* Cidade/País */}
                     <div className="space-y-2">
                       <Label htmlFor="cidadePais" className="text-slate-700 font-medium">
-                        Cidade/País *
+                        {t('form.fields.location')} *
                       </Label>
                       <Input
                         id="cidadePais"
@@ -194,7 +189,7 @@ const FormularioEmbaixador = () => {
                         required
                         value={formData.cidadePais}
                         onChange={(e) => handleInputChange("cidadePais", e.target.value)}
-                        placeholder="Porto, Portugal"
+                        placeholder={t('form.fields.locationPlaceholder')}
                         className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                       />
                     </div>
@@ -202,7 +197,7 @@ const FormularioEmbaixador = () => {
                     {/* Como nos conheceu */}
                     <div className="space-y-2">
                       <Label htmlFor="comoConheceu" className="text-slate-700 font-medium">
-                        Como nos conheceu? *
+                        {t('form.fields.howFound')} *
                       </Label>
                       <Select
                         value={formData.comoConheceu}
@@ -210,15 +205,15 @@ const FormularioEmbaixador = () => {
                         required
                       >
                         <SelectTrigger className="h-12 rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37]">
-                          <SelectValue placeholder="Selecione uma opção" />
+                          <SelectValue placeholder={t('form.fields.howFoundPlaceholder')} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="instagram">Instagram</SelectItem>
-                          <SelectItem value="facebook">Facebook</SelectItem>
-                          <SelectItem value="google">Google</SelectItem>
-                          <SelectItem value="indicacao">Indicação</SelectItem>
-                          <SelectItem value="paciente">Já sou paciente</SelectItem>
-                          <SelectItem value="outro">Outro</SelectItem>
+                          <SelectItem value="instagram">{t('form.fields.howFoundOptions.instagram')}</SelectItem>
+                          <SelectItem value="facebook">{t('form.fields.howFoundOptions.facebook')}</SelectItem>
+                          <SelectItem value="google">{t('form.fields.howFoundOptions.google')}</SelectItem>
+                          <SelectItem value="indicacao">{t('form.fields.howFoundOptions.referral')}</SelectItem>
+                          <SelectItem value="paciente">{t('form.fields.howFoundOptions.patient')}</SelectItem>
+                          <SelectItem value="outro">{t('form.fields.howFoundOptions.other')}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -226,13 +221,13 @@ const FormularioEmbaixador = () => {
                     {/* Motivação */}
                     <div className="space-y-2">
                       <Label htmlFor="motivacao" className="text-slate-700 font-medium">
-                        Por que quer ser Embaixador(a)?
+                        {t('form.fields.motivation')}
                       </Label>
                       <Textarea
                         id="motivacao"
                         value={formData.motivacao}
                         onChange={(e) => handleInputChange("motivacao", e.target.value)}
-                        placeholder="Conte-nos um pouco sobre sua motivação..."
+                        placeholder={t('form.fields.motivationPlaceholder')}
                         className="min-h-[120px] rounded-xl border-slate-200 focus:border-[#D4AF37] focus:ring-[#D4AF37] resize-none"
                       />
                     </div>
@@ -246,19 +241,18 @@ const FormularioEmbaixador = () => {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                          Enviando...
+                          {t('form.submitting')}
                         </>
                       ) : (
                         <>
-                          Quero ser Embaixador(a) Areluna
+                          {t('form.submit')}
                           <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </>
                       )}
                     </Button>
 
                     <p className="text-xs text-slate-500 text-center">
-                      Ao enviar, você concorda com nossa política de privacidade e
-                      termos do programa de embaixadores.
+                      {t('form.privacy')}
                     </p>
                   </form>
                 ) : (
@@ -272,10 +266,10 @@ const FormularioEmbaixador = () => {
                       <Check className="w-10 h-10 text-white" />
                     </motion.div>
                     <h3 className="text-2xl font-vivant-medium text-slate-900 mb-3">
-                      Inscrição Enviada!
+                      {t('form.successTitle')}
                     </h3>
                     <p className="text-slate-600">
-                      Obrigado pelo seu interesse. Em breve entraremos em contato.
+                      {t('form.successMessage')}
                     </p>
                   </div>
                 )}

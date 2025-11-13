@@ -2,46 +2,42 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Crown, Gift, Target, Lightbulb, TrendingUp, Shield } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PorqueSerEmbaixador = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const benefits = [
     {
       icon: Crown,
-      title: "Reconhecimento Exclusivo",
-      description: "Faça parte de um grupo seleto de embaixadores que representam a excelência em estética integrada.",
+      key: "recognition",
       color: "from-[#D4AF37] to-[#B4941F]",
     },
     {
       icon: Gift,
-      title: "Recompensas Especiais",
-      description: "Receba benefícios exclusivos, descontos em tratamentos e bonificações por cada indicação bem-sucedida.",
+      key: "rewards",
       color: "from-blue-500 to-blue-600",
     },
     {
       icon: Target,
-      title: "Acesso à Plataforma",
-      description: "Tenha acesso a uma plataforma exclusiva para acompanhar suas indicações e benefícios em tempo real.",
+      key: "platform",
       color: "from-purple-500 to-purple-600",
     },
     {
       icon: Lightbulb,
-      title: "Propósito e Impacto",
-      description: "Ajude pessoas a transformarem suas vidas através de tratamentos que aumentam autoestima e bem-estar.",
+      key: "purpose",
       color: "from-emerald-500 to-emerald-600",
     },
     {
       icon: TrendingUp,
-      title: "Crescimento Conjunto",
-      description: "Cresça conosco e faça parte da expansão da marca mais prestigiada em estética integrada da Europa.",
+      key: "growth",
       color: "from-orange-500 to-orange-600",
     },
     {
       icon: Shield,
-      title: "Suporte Dedicado",
-      description: "Conte com uma equipe dedicada para apoiar você em todas as etapas do programa de embaixadores.",
+      key: "support",
       color: "from-rose-500 to-rose-600",
     },
   ];
@@ -214,7 +210,7 @@ const PorqueSerEmbaixador = () => {
                 transition: "transform 0.3s ease-out",
               }}
             >
-              {benefit.title}
+              {t(`benefits.items.${benefit.key}.title`)}
             </motion.h3>
             <motion.p
               className="text-slate-600 leading-relaxed"
@@ -223,7 +219,7 @@ const PorqueSerEmbaixador = () => {
                 transition: "transform 0.3s ease-out",
               }}
             >
-              {benefit.description}
+              {t(`benefits.items.${benefit.key}.description`)}
             </motion.p>
           </div>
 
@@ -327,7 +323,7 @@ const PorqueSerEmbaixador = () => {
                 ease: "easeInOut",
               }}
             >
-              Benefícios Exclusivos
+              {t('benefits.badge')}
             </motion.span>
             <motion.h2
               className="text-4xl md:text-5xl lg:text-6xl font-vivant-black text-slate-900 mb-6"
@@ -335,7 +331,7 @@ const PorqueSerEmbaixador = () => {
                 textShadow: "0 0 40px rgba(212,175,55,0.1)",
               }}
             >
-              Por que ser
+              {t('benefits.title')}
               <br />
               <motion.span
                 className="bg-gradient-to-r from-[#D4AF37] via-[#F4E5B5] to-[#D4AF37] bg-clip-text text-transparent"
@@ -351,7 +347,7 @@ const PorqueSerEmbaixador = () => {
                   backgroundSize: "200% auto",
                 }}
               >
-                Embaixador(a) Areluna
+                {t('benefits.titleHighlight')}
               </motion.span>
             </motion.h2>
             <motion.p
@@ -360,8 +356,7 @@ const PorqueSerEmbaixador = () => {
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.4 }}
             >
-              Esta não é apenas uma oportunidade de indicação. É um convite para fazer parte
-              de uma missão maior: transformar vidas através da beleza com propósito.
+              {t('benefits.subtitle')}
             </motion.p>
           </motion.div>
 
@@ -413,14 +408,12 @@ const PorqueSerEmbaixador = () => {
                   ease: "easeInOut",
                 }}
               >
-                Mais que indicações,
+                {t('benefits.ctaTitle')}
                 <br />
-                <span className="text-[#D4AF37]">uma comunidade de propósito</span>
+                <span className="text-[#D4AF37]">{t('benefits.ctaHighlight')}</span>
               </motion.h3>
               <p className="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-                Como Embaixador(a) Areluna, você não apenas indica — você inspira transformações.
-                Cada cliente que você apresenta é uma vida que pode ser tocada pela nossa missão
-                de beleza integrada e bem-estar completo.
+                {t('benefits.ctaText')}
               </p>
             </div>
 
